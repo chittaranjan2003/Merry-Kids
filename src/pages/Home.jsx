@@ -4,6 +4,10 @@ import HeroBg from "../assets/home-hero-bg.svg";
 import ChildrenPlayingHero from "../assets/Children walking ill.png";
 import FunLearningIcon from "../assets/Children playing wit.png";
 import CreativeActivitiesIcon from "../assets/Children drawing out.png";
+import SafeEnvironmentIcon from "../assets/Children gardening o.png";
+import DrawingImage from "../assets/drawing (1).jpg";
+import PlayingImage from "../assets/playing.jpg";
+import StorytellingImage from "../assets/storytelling.png";
 import "./Home.css";
 
 const Home = () => {
@@ -39,12 +43,13 @@ const Home = () => {
         title: "Safe Environment",
         desc: "A caring space where every child feels secure and supported.",
         icon: (
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="home-icon">
-            <path
-              d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z"
-              fill="currentColor"
-            />
-          </svg>
+          <img
+            src={SafeEnvironmentIcon}
+            alt=""
+            className="home-card-icon-img"
+            loading="lazy"
+            decoding="async"
+          />
         ),
       },
     ],
@@ -194,8 +199,20 @@ const Home = () => {
                 transition={{ duration: 0.45, delay: index * 0.06 }}
                 viewport={{ once: true, amount: 0.35 }}
               >
-                <div className="home-mini-badge" aria-hidden="true">
-                  {index === 0 ? "🎨" : index === 1 ? "🧩" : "📚"}
+                <div className="home-mini-media" aria-hidden="true">
+                  <img
+                    src={
+                      index === 0
+                        ? DrawingImage
+                        : index === 1
+                          ? PlayingImage
+                          : StorytellingImage
+                    }
+                    alt=""
+                    className="home-mini-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <h3 className="home-mini-title">{item.title}</h3>
                 <p className="home-mini-desc">{item.desc}</p>
