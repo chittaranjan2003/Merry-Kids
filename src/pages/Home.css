@@ -110,28 +110,42 @@
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .home-btn {
   appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(11, 18, 32, 0.14);
   background: linear-gradient(
-  background: rgba(255, 255, 255, 0.98);
+    135deg,
     var(--kid-sky),
     var(--kid-pink),
     var(--kid-mint)
   );
   color: var(--kid-ink);
   font-weight: 800;
-  border-radius: 18px;
-  padding: 14px 18px;
+  font-size: 0.95rem;
+  line-height: 1;
+  border-radius: 16px;
+  padding: 12px 16px;
   box-shadow: 0 16px 40px rgba(11, 18, 32, 0.16);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-  filter: none;
-  animation: none;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 46px rgba(11, 18, 32, 0.2);
+}
+
+.home-btn:focus-visible {
+  outline: 3px solid rgba(46, 139, 255, 0.55);
+  outline-offset: 3px;
 }
 .home-hero-visual {
   display: flex;
@@ -142,7 +156,7 @@
   width: min(560px, 100%);
   aspect-ratio: 4 / 3;
   border-radius: 26px;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.98);
   border: 1px solid rgba(11, 18, 32, 0.1);
   box-shadow: 0 18px 54px rgba(11, 18, 32, 0.16);
   overflow: hidden;
@@ -152,26 +166,12 @@
 }
 
 .home-hero-illustration {
-  width: 96%;
-  height: 96%;
-  object-fit: contain;
-  animation: homeFloat 6s ease-in-out infinite;
-}
-
-@keyframes homeFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-hero-illustration {
-    animation: none;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+  animation: none;
 }
 
 /* Decorative floating shapes */
@@ -481,7 +481,8 @@
 
   .home-cta-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -491,8 +492,9 @@
   }
 
   .home-btn {
-    width: 100%;
-    padding: 14px 16px;
+    width: auto;
+    padding: 11px 14px;
+    font-size: 0.9rem;
   }
 
   .home-shape--balloon {
