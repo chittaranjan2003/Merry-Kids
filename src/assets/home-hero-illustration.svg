@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-label="Happy kids learning illustration">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.55"/>
+    </linearGradient>
+    <radialGradient id="spot" cx="50%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Back panel -->
+  <rect x="40" y="40" width="820" height="570" rx="36" fill="url(#panel)"/>
+  <rect x="40" y="40" width="820" height="570" rx="36" fill="url(#spot)" opacity="0.55"/>
+
+  <!-- Decorative stars -->
+  <g fill="#FFF6A5" opacity="0.95">
+    <path d="M140 110l10 22 24 3-18 15 6 24-22-13-22 13 6-24-18-15 24-3 10-22z" opacity="0.5"/>
+    <path d="M770 170l8 18 20 3-15 12 5 20-18-11-18 11 5-20-15-12 20-3 8-18z" opacity="0.45"/>
+  </g>
+
+  <!-- Balloons -->
+  <g opacity="0.95">
+    <ellipse cx="760" cy="260" rx="36" ry="46" fill="#FFC6D9"/>
+    <path d="M760 306c0 0-4 34-22 62" stroke="#0B1220" stroke-opacity="0.20" stroke-width="3" fill="none"/>
+
+    <ellipse cx="700" cy="290" rx="28" ry="38" fill="#AEE2FF"/>
+    <path d="M700 328c0 0-4 28-18 54" stroke="#0B1220" stroke-opacity="0.20" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Table -->
+  <g>
+    <rect x="210" y="390" width="480" height="170" rx="26" fill="#ffffff" opacity="0.75"/>
+    <rect x="250" y="430" width="400" height="18" rx="9" fill="#0B1220" opacity="0.10"/>
+    <rect x="250" y="468" width="300" height="18" rx="9" fill="#0B1220" opacity="0.10"/>
+  </g>
+
+  <!-- Kids (simple friendly shapes) -->
+  <g>
+    <!-- heads -->
+    <circle cx="300" cy="290" r="46" fill="#FFF6A5"/>
+    <circle cx="600" cy="290" r="46" fill="#C1F4C5"/>
+    <circle cx="450" cy="240" r="54" fill="#AEE2FF"/>
+
+    <!-- hair -->
+    <path d="M258 285c10-32 34-52 62-52 26 0 50 18 58 46-10-10-24-16-38-16-26 0-52 8-82 22z" fill="#0B1220" opacity="0.20"/>
+    <path d="M570 270c10-26 30-42 52-42 28 0 54 24 58 54-16-14-34-20-54-20-20 0-38 4-56 8z" fill="#0B1220" opacity="0.18"/>
+    <path d="M405 230c10-34 38-60 72-60 34 0 64 26 72 62-18-18-40-26-64-26-28 0-56 10-80 24z" fill="#0B1220" opacity="0.16"/>
+
+    <!-- faces -->
+    <g fill="#0B1220" opacity="0.55">
+      <circle cx="284" cy="282" r="6"/>
+      <circle cx="316" cy="282" r="6"/>
+      <path d="M286 306c11 12 25 12 36 0" fill="none" stroke="#0B1220" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
+
+      <circle cx="434" cy="232" r="6"/>
+      <circle cx="466" cy="232" r="6"/>
+      <path d="M436 258c11 12 25 12 36 0" fill="none" stroke="#0B1220" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
+
+      <circle cx="584" cy="282" r="6"/>
+      <circle cx="616" cy="282" r="6"/>
+      <path d="M586 306c11 12 25 12 36 0" fill="none" stroke="#0B1220" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
+    </g>
+
+    <!-- bodies -->
+    <path d="M235 520c18-70 58-112 120-112s102 42 120 112" fill="#FFC6D9" opacity="0.55"/>
+    <path d="M425 520c16-84 52-134 110-134s94 50 110 134" fill="#AEE2FF" opacity="0.55"/>
+    <path d="M585 520c12-68 46-108 96-108 48 0 80 38 96 108" fill="#C1F4C5" opacity="0.55"/>
+  </g>
+
+  <!-- Little pencils/books -->
+  <g opacity="0.9">
+    <rect x="370" y="410" width="70" height="18" rx="9" fill="#FFC6D9"/>
+    <rect x="450" y="410" width="90" height="18" rx="9" fill="#C1F4C5"/>
+    <rect x="560" y="410" width="56" height="18" rx="9" fill="#FFF6A5"/>
+  </g>
+</svg>
