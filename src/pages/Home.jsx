@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import AnimatedButton from '../components/AnimatedButton';
 import Card from '../components/Card';
 import HeroBackground from '../assets/hero-background.svg';
-import HeroMain from '../assets/hero-main.svg';
+import HeroMain from '../assets/working-together.svg';
 import './Home.css';
 
 const Home = () => {
@@ -26,11 +26,12 @@ const Home = () => {
   }, []);
 
   const HeroIllustration = () => (
-    <img
-      src={HeroMain}
-      alt="Kids learning illustration"
+    <div
       className="hero-svg"
+      role="img"
+      aria-label="Kids learning illustration"
       ref={svgRef}
+      style={{ backgroundImage: `url(${HeroMain})` }}
     />
   );
   const classes = [
@@ -48,85 +49,92 @@ const Home = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: '#0B0F19', color: '#FFFFFF' }}>
+    <div className="home-page" style={{ backgroundColor: '#0B0F19', color: '#FFFFFF' }}>
+      <div
+        className="home-page-bg"
+        aria-hidden="true"
+        style={{ backgroundImage: `url(${HeroBackground})` }}
+      />
       {/* Hero Section */}
       <section className="hero-section">
-        {/* Left Content */}
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <img
-            src={HeroBackground}
-            alt=""
-            className="hero-background-svg"
-          />
-          <motion.h1
-            className="hero-title"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Empower Learning with <span className="hero-highlight">Merry Kids</span>
-          </motion.h1>
-          
-          <motion.p
-            className="hero-subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Premium digital school experience with expert educators, structured classes, and a safe, nurturing environment for every child.
-          </motion.p>
-
+        <div
+          className="hero-bg-layer"
+          aria-hidden="true"
+          style={{ backgroundImage: `url(${HeroBackground})` }}
+        />
+        <div className="hero-inner">
+          {/* Left Content */}
           <motion.div
-            className="hero-features"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hero-content"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <div className="feature-item">
-              <span className="feature-icon">✓</span>
-              <span>Expert Teachers</span>
-            </div>
-            <div className="feature-item">
-              <span className="feature-icon">✓</span>
-              <span>Safe Learning</span>
-            </div>
-            <div className="feature-item">
-              <span className="feature-icon">✓</span>
-              <span>Interactive Classes</span>
-            </div>
+            <motion.h1
+              className="hero-title"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Empower Learning with <span className="hero-highlight">Merry Kids</span>
+            </motion.h1>
+            
+            <motion.p
+              className="hero-subtitle"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              Premium digital school experience with expert educators, structured classes, and a safe, nurturing environment for every child.
+            </motion.p>
+
+            <motion.div
+              className="hero-features"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="feature-item">
+                <span className="feature-icon">✓</span>
+                <span>Expert Teachers</span>
+              </div>
+              <div className="feature-item">
+                <span className="feature-icon">✓</span>
+                <span>Safe Learning</span>
+              </div>
+              <div className="feature-item">
+                <span className="feature-icon">✓</span>
+                <span>Interactive Classes</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <AnimatedButton onClick={() => alert('Enroll Now!')} className="hero-button">
+                Enroll Now
+              </AnimatedButton>
+            </motion.div>
           </motion.div>
 
+          {/* Right Illustration */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            className="hero-illustration-container"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
-            <AnimatedButton onClick={() => alert('Enroll Now!')} className="hero-button">
-              Enroll Now
-            </AnimatedButton>
+            <motion.div
+              className="illustration-wrapper"
+              animate={{ y: [0, -18, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <HeroIllustration />
+            </motion.div>
           </motion.div>
-        </motion.div>
-
-        {/* Right Illustration */}
-        <motion.div
-          className="hero-illustration-container"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-        >
-          <motion.div
-            className="illustration-wrapper"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <HeroIllustration />
-          </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* About Section */}
