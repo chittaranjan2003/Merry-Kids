@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 import HeroBg from "../assets/home-hero-bg.svg";
-import ChildrenPlayingHero from "../assets/children-playing-homeront'.webp";
+import ChildrenPlayingHero from "../assets/Children walking ill.png";
+import FunLearningIcon from "../assets/Children playing wit.png";
+import CreativeActivitiesIcon from "../assets/Children drawing out.png";
 import "./Home.css";
 
 const Home = () => {
@@ -11,29 +13,26 @@ const Home = () => {
         title: "Fun Learning",
         desc: "Play-based activities that build curiosity and confidence.",
         icon: (
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="home-icon">
-            <path
-              d="M12 2l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 13.6 7 17.2l1.9-5.8L4 7.8h6.1L12 2z"
-              fill="currentColor"
-            />
-          </svg>
+          <img
+            src={FunLearningIcon}
+            alt=""
+            className="home-card-icon-img"
+            loading="lazy"
+            decoding="async"
+          />
         ),
       },
       {
         title: "Creative Activities",
         desc: "Art, music, stories, and movement for joyful expression.",
         icon: (
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="home-icon">
-            <path
-              d="M4 19c3-1 5-3 6-6 1 3 3 5 6 6-3 1-5 3-6 6-1-3-3-5-6-6z"
-              fill="currentColor"
-            />
-            <path
-              d="M16.5 2l1.2 3.6H21l-2.7 2 1.1 3.6-2.9-2.1-2.9 2.1 1.1-3.6-2.7-2h3.3L16.5 2z"
-              fill="currentColor"
-              opacity="0.85"
-            />
-          </svg>
+          <img
+            src={CreativeActivitiesIcon}
+            alt=""
+            className="home-card-icon-img"
+            loading="lazy"
+            decoding="async"
+          />
         ),
       },
       {
