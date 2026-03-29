@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Icon = ({ children }) => (
   <span className="mkf-icon" aria-hidden="true">
@@ -97,14 +98,14 @@ const Footer = () => {
             <h4 className="mkf-heading">Quick Links</h4>
             <ul className="mkf-links" aria-label="Quick links">
               <li>
-                <a className="mkf-link" href="/">
+                <Link className="mkf-link" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="mkf-link" href="/gallery">
+                <Link className="mkf-link" to="/gallery">
                   Gallery
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -113,14 +114,14 @@ const Footer = () => {
             <h4 className="mkf-heading">Classes / Services</h4>
             <ul className="mkf-links" aria-label="Classes and services">
               <li>
-                <a className="mkf-link" href="/classes">
+                <Link className="mkf-link" to="/classes">
                   Classes
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="mkf-link" href="/facilities">
+                <Link className="mkf-link" to="/facilities">
                   Facilities
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

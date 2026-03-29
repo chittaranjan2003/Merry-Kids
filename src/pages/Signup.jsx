@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import AnimatedButton from "../components/AnimatedButton";
 
 const Signup = () => {
@@ -56,9 +57,9 @@ const Signup = () => {
             style={{ color: "var(--kid-muted)", marginTop: "4px" }}
           >
             Already have an account?{" "}
-            <a href="/login" className="kid-link">
+            <Link to="/login" className="kid-link">
               Login
-            </a>
+            </Link>
           </p>
         </div>
       </motion.div>
