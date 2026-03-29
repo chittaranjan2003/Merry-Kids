@@ -6,6 +6,15 @@ Options -MultiViews
 
 ErrorDocument 404 /index.html
 
+<IfModule mod_headers.c>
+    # Prevent stale index.html caching (common cause of "Home only" loading after redeploy)
+    <FilesMatch "\.(html)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url=./" />
+    <script>
+      (function () {
+        // SPA fallback for static hosts:
+        // /classes -> /#/classes
+        // Keeps query string if present.
+        var pathname = window.location.pathname || '/';
+        var search = window.location.search || '';
+
+        // Remove trailing "index.html" if any.
+        pathname = pathname.replace(/index\.html$/i, '');
+
+        // If we're already at root, just go home.
+        if (pathname === '/' || pathname === '') {
+          window.location.replace('./#/');
+          return;
+        }
+
+        // Build hash route.
+        // Ensure we don't double-slash.
+        var route = pathname.charAt(0) === '/' ? pathname : '/' + pathname;
+        window.location.replace('./#' + route + search);
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting…
+  </body>
+</html>
