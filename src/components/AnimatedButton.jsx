@@ -1,14 +1,24 @@
-const AnimatedButton = ({ children, onClick, className = '', variant = 'primary' }) => {
-  const baseClasses = "font-semibold py-3 px-6 rounded-[14px] transition-all duration-300 border-none cursor-pointer";
+const AnimatedButton = ({
+  children,
+  onClick,
+  className = "",
+  variant = "primary",
+}) => {
+  const baseClasses =
+    "font-semibold py-3 px-6 rounded-[14px] transition-all duration-300 border-none cursor-pointer";
 
   const buttonStyle = {
-    background: 'linear-gradient(135deg, #3b4e8a 0%, #5f52a9 100%)',
-    color: '#FFFFFF',
-    borderRadius: '14px',
-    border: '1px solid rgba(255, 255, 255, 0.2)',
-    transform: 'scale(1)',
-    transition: 'all 0.3s ease',
-    boxShadow: '0 10px 28px rgba(59, 78, 138, 0.32)',
+    background: "var(--kid-btn-gradient)",
+    color: "var(--kid-ink)",
+    borderRadius: "14px",
+    border: "1px solid rgba(11, 18, 32, 0.12)",
+    transform: "translateY(0)",
+    transition: "all 0.3s ease",
+    boxShadow: "0 12px 32px rgba(11, 18, 32, 0.16)",
+    boxSizing: "border-box",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
   return (
@@ -17,12 +27,13 @@ const AnimatedButton = ({ children, onClick, className = '', variant = 'primary'
       style={buttonStyle}
       className={`${baseClasses} ${className}`}
       onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.05)';
-        e.target.style.boxShadow = '0 16px 44px rgba(95, 82, 169, 0.6)';
+        e.target.style.transform = "translateY(-2px)";
+        e.target.style.boxShadow =
+          "0 18px 54px rgba(11, 18, 32, 0.18), 0 0 0 6px rgba(174, 226, 255, 0.35)";
       }}
       onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 10px 28px rgba(59, 78, 138, 0.32)';
+        e.target.style.transform = "translateY(0)";
+        e.target.style.boxShadow = "0 12px 32px rgba(11, 18, 32, 0.16)";
       }}
     >
       {children}

@@ -1,49 +1,67 @@
-import { useState } from 'react';
-import AnimatedButton from '../components/AnimatedButton';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import AnimatedButton from "../components/AnimatedButton";
 
 const Signup = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', paddingTop: '120px', backgroundColor: '#0B0F19', color: '#FFFFFF' }}>
-      <div style={{ borderRadius: '12px', padding: '2.5rem', width: '100%', maxWidth: '400px', backgroundColor: '#1a1f2e', border: '1px solid #2a3142' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: '700', textAlign: 'center', marginBottom: '2rem' }}>Join Merry Kids!</h1>
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          style={{ width: '100%', padding: '0.75rem 1rem', marginBottom: '1.5rem', borderRadius: '8px', border: '1px solid #2a3142', backgroundColor: '#0B0F19', color: '#FFFFFF', outline: 'none' }}
-          onFocus={(e) => (e.target.style.borderColor = '#4a5568')}
-          onBlur={(e) => (e.target.style.borderColor = '#2a3142')}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{ width: '100%', padding: '0.75rem 1rem', marginBottom: '1.5rem', borderRadius: '8px', border: '1px solid #2a3142', backgroundColor: '#0B0F19', color: '#FFFFFF', outline: 'none' }}
-          onFocus={(e) => (e.target.style.borderColor = '#4a5568')}
-          onBlur={(e) => (e.target.style.borderColor = '#2a3142')}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={{ width: '100%', padding: '0.75rem 1rem', marginBottom: '2rem', borderRadius: '8px', border: '1px solid #2a3142', backgroundColor: '#0B0F19', color: '#FFFFFF', outline: 'none' }}
-          onFocus={(e) => (e.target.style.borderColor = '#4a5568')}
-          onBlur={(e) => (e.target.style.borderColor = '#2a3142')}
-        />
-        <AnimatedButton onClick={() => alert('Signed up!')} style={{ width: '100%', padding: '0.75rem 1rem', fontSize: '1rem' }} variant="secondary">
-          Create Account
-        </AnimatedButton>
-        <p style={{ textAlign: 'center', marginTop: '1.5rem', color: '#9CA3AF' }}>
-          Already have an account? <a href="/login" style={{ color: '#9CA3AF', textDecoration: 'none' }} className="hover:text-white">Login</a>
-        </p>
-      </div>
+    <div className="kid-page kid-page--nav flex items-center justify-center px-6 pb-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65 }}
+        viewport={{ once: true, amount: 0.6 }}
+        className="kid-form-shell"
+      >
+        <h1 className="text-3xl font-extrabold text-center mb-8">
+          <span className="kid-title-accent">Join Merry Kids!</span>
+        </h1>
+
+        <div className="flex flex-col gap-5">
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="kid-input"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="kid-input"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="kid-input"
+          />
+
+          <AnimatedButton
+            onClick={() => alert("Signed up!")}
+            className="w-full text-base"
+            variant="secondary"
+          >
+            Create Account
+          </AnimatedButton>
+
+          <p
+            className="text-center"
+            style={{ color: "var(--kid-muted)", marginTop: "4px" }}
+          >
+            Already have an account?{" "}
+            <a href="/login" className="kid-link">
+              Login
+            </a>
+          </p>
+        </div>
+      </motion.div>
     </div>
   );
 };
