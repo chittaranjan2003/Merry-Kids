@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -16,7 +16,7 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Suspense fallback={<Loader />}>
         <Routes>
@@ -87,7 +87,7 @@ function App() {
         </Routes>
         <Footer />
       </Suspense>
-    </Router>
+    </>
   );
 }
 
