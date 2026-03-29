@@ -1,64 +1,73 @@
-import { motion } from 'framer-motion';
-import Card from '../components/Card';
+import { motion } from "framer-motion";
+import "./ClassesFacilities.css";
 
 const Classes = () => {
   const classes = [
-    { name: 'PlaySchool', age: '2-3', desc: 'Introduction to learning through play.', image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-    { name: 'Nursery', age: '3-4', desc: 'Basic skills and social interaction.', image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-    { name: 'LKG', age: '4-5', desc: 'Preparatory for kindergarten.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-    { name: 'UKG', age: '5-6', desc: 'Advanced prep for primary school.', image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+    {
+      name: "PlaySchool",
+      age: "2-3",
+      desc: "Introduction to learning through play.",
+      image:
+        "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Nursery",
+      age: "3-4",
+      desc: "Basic skills and social interaction.",
+      image:
+        "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "LKG",
+      age: "4-5",
+      desc: "Preparatory for kindergarten.",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "UKG",
+      age: "5-6",
+      desc: "Advanced prep for primary school.",
+      image:
+        "https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    },
   ];
 
   return (
-    <div style={{ backgroundColor: '#0B0F19', color: '#FFFFFF', minHeight: '100vh' }}>
-      <section style={{ padding: '80px 24px', paddingTop: '120px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <div className="kid-page kid-page--nav">
+      <section className="kid-section">
+        <div className="kid-container">
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{ fontSize: '2.5rem', fontWeight: '700', textAlign: 'center', marginBottom: '3rem', color: '#FFFFFF' }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65 }}
+            viewport={{ once: true, amount: 0.6 }}
+            className="kid-title"
           >
-            Our Classes
+            <span className="kid-title-accent">Our Classes</span>
           </motion.h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="cf-grid">
             {classes.map((cls, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.65, delay: index * 0.08 }}
                 viewport={{ once: true, amount: 0.3 }}
-                style={{
-                  padding: '32px',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  borderRadius: '16px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                  e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.2)';
-                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(59, 78, 138, 0.3)';
-                  e.currentTarget.style.transform = 'translateY(-8px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                  e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)';
-                  e.currentTarget.style.boxShadow = 'none';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
+                className="cf-card"
               >
-                <div style={{ fontSize: '2.5rem', marginBottom: '12px', textAlign: 'center' }}>
-                  {['🎓', '📚', '✏️', '🚀'][index]}
+                <div className="cf-media" aria-hidden="true">
+                  <img
+                    src={cls.image}
+                    alt={`${cls.name} class`}
+                    loading="lazy"
+                    decoding="async"
+                    className="cf-mediaImg"
+                  />
                 </div>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '700', textAlign: 'center', marginBottom: '8px', color: '#FFFFFF' }}>
-                  {cls.name}
-                </h3>
-                <p style={{ textAlign: 'center', marginBottom: '8px', color: '#9CA3AF' }}>Age: {cls.age}</p>
-                <p style={{ textAlign: 'center', color: '#9CA3AF', lineHeight: '1.6' }}>{cls.desc}</p>
+                <h3 className="cf-title">{cls.name}</h3>
+                <p className="cf-meta">Age: {cls.age}</p>
+                <p className="cf-desc">{cls.desc}</p>
               </motion.div>
             ))}
           </div>

@@ -138,9 +138,9 @@ const Home = () => {
         <div className="home-container">
           <motion.h2
             className="home-section-title"
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
+            transition={{ duration: 0.65 }}
             viewport={{ once: true, amount: 0.35 }}
           >
             Little Learners. Big Smiles.
@@ -155,9 +155,9 @@ const Home = () => {
               <motion.article
                 key={feature.title}
                 className="home-card"
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
+                transition={{ duration: 0.65, delay: index * 0.08 }}
                 viewport={{ once: true, amount: 0.35 }}
               >
                 <div className="home-card-icon" aria-hidden="true">
@@ -178,9 +178,9 @@ const Home = () => {
         <div className="home-container">
           <motion.h2
             className="home-section-title"
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
+            transition={{ duration: 0.65 }}
             viewport={{ once: true, amount: 0.35 }}
           >
             Activities Kids Love
@@ -194,9 +194,9 @@ const Home = () => {
               <motion.article
                 key={item.title}
                 className="home-mini"
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
+                transition={{ duration: 0.65, delay: index * 0.08 }}
                 viewport={{ once: true, amount: 0.35 }}
               >
                 <div className="home-mini-media" aria-hidden="true">
@@ -223,7 +223,13 @@ const Home = () => {
       </section>
 
       <section id="home-cta" className="home-cta" aria-label="Call to action">
-        <div className="home-container home-cta-inner">
+        <motion.div
+          className="home-container home-cta-inner"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <div>
             <h2 className="home-cta-title">Join Us Today!</h2>
             <p className="home-cta-subtitle">
@@ -237,7 +243,7 @@ const Home = () => {
           >
             Enroll Now
           </button>
-        </div>
+        </motion.div>
       </section>
     </main>
   );
